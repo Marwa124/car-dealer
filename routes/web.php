@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Artisan::call('config:clear', 'cache:clear', 'view:clear');
 Route::group(['namespace' => 'Front'], function(){
   Route::get('/', 'FrontController@home')->name('master');
   Route::get('car-details/{id}', 'FrontController@carDetails')->name('car.details');
